@@ -29,6 +29,15 @@ class Solution {
         
         var output = nums.count
         
+        // Iterate over array and compare elements to find duplicates
+        
+        for (index, element) in nums.enumerated() {
+            for compared in nums.dropFirst(index + 1) {
+                if compared == element {
+                    
+                }
+            }
+        }
         
         return output
     }
