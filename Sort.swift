@@ -1,7 +1,9 @@
 import Foundation
 
 public enum Sort {
-    public static func insertionSort(_ input: [Int]) -> [Int] {
+    public static func insertionSort(
+        _ input: [Int]
+    ) -> [Int] {
         guard input.count > 2 else { return input }
         
         var output: [Int] = input
