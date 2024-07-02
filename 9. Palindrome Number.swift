@@ -28,29 +28,15 @@ public enum PalindromeNumber {
     public static func isPalindrome(_ x: Int) -> Bool {
         guard x >= 0 else { return false }
         
-        var array: [Int] = []
-        var temp: Int = x
-        var result: Bool = true
+        var reverse = 0
+        var mutableX = x
+        let xcopy = x
         
-        if x >= 10 {
-            while temp / 10 > 0 {
-                array.append(temp % 10)
-                let integer = temp / 10
-                if  integer >= 10 {
-                    temp = integer
-                } else {
-                    array.append(integer)
-                    temp = 0
-                }
-            }
-        } else {
-            return true
-        }
-                
-        while array.count > 1, result == true {
-            result = array.removeFirst() == array.removeLast()
+        while mutableX > 0 {
+            reverse = reverse * 10 + mutableX % 10
+            mutableX = mutableX / 10
         }
         
-        return result
+        return reverse == xcopy
     }
 }
