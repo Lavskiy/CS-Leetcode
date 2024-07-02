@@ -57,4 +57,18 @@ public enum TwoSum {
             return result
         }
     }
+    
+    public static func twoSumRefactored(_ nums: [Int], _ target: Int) -> [Int] {
+        var hash: [Int: Int] = [:]
+        
+        return nums.enumerated().reduce(into: []) {
+            if let hashValue = hash[target - $1.element] {
+                $0.append(hashValue)
+                $0.append($1.offset)
+            } else {
+                hash[$1.element] = $1.offset
+            }
+        }
+    }
+    
 }
