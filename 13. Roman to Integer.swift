@@ -51,12 +51,10 @@ public enum RomanToInteger {
         let hash = [
             "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000
         ]
-        
-        let array = Array(s).map { "\($0)" }.compactMap { hash[$0] }
-        
+                
         var last = 0
         
-        return array.reduce(into: 0) { result, next in
+        return s.compactMap { hash["\($0)"] }.reduce(into: 0) { result, next in
             if result == 0 {
                 result = next
                 last = next
