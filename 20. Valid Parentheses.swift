@@ -28,6 +28,19 @@ public enum ValidParentheses {
     
     
     public static func isValid(_ s: String) -> Bool {
+        
+        class Stack<T> {
+            var array: [T] = []
+            
+            func push(_ element: T) {
+                array.append(element)
+            }
+            
+            func pop() -> T? {
+                array.popLast()
+            }
+        }
+        
         return true
     }
     
