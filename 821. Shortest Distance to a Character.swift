@@ -1,6 +1,6 @@
 import Foundation
 
-public enum class ShortestDistanceToACharacter {
+public enum ShortestDistanceToACharacter {
     /*
      Example 1:
 
