@@ -22,6 +22,16 @@ public enum RunningSumOf1DArray {
             
             return output
         }
+        
+        func runningSum(_ nums: [Int]) -> [Int] {
+            var prefix = [nums[0]]
+            
+            for i in 1..<nums.count {
+                prefix.append(nums[i] + prefix[prefix.count - 1])
+            }
+            
+            return prefix
+        }
     }
 }
 
